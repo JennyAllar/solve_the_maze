@@ -6,4 +6,19 @@ class Maze < ActiveRecord::Base
   def has_exit?(string)
     string.include?("X")
   end
+
+  def has_doorway?(string)
+    string.include?("*")
+  end
+
+  def count_doorways(string)
+    counter = 0
+    characters = string.chars
+    characters.each do |character|
+      if character == "*"
+        counter += 1
+      end
+    end
+    counter
+  end
 end
