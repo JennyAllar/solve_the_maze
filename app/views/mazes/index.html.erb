@@ -1,12 +1,16 @@
 Welcome to the Maze Solver<br><br><br>
 
+<%= flash[:notice] %>
 <%= form_for @maze do |m| %>
   <%= m.label :maze, "Maze:" %><br>
   <%= m.text_area(:maze, :size => "30x10") %>
-  <%= m.submit "Solve this Maze" %>
+  <%= m.submit "Is This Maze Valid?" %>
 <% end %>
 
 You have entered:<br>
 <% @mazes.each do |maze| %>
 <%= maze.maze %><br>
 <% end %>
+
+
+<%= params[:maze] %>

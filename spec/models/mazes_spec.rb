@@ -28,4 +28,16 @@ describe Maze do
 
     expect(actual).to eq(2)
   end
+  
+  it 'determines if a room is valid' do
+    valid_room = "[|**|]"
+    invalid_room = "[|||||]"
+    actual_1 = Maze.create.room_valid?(valid_room)
+    actual_2 = Maze.new.room_valid?(invalid_room)
+    
+    expect(actual_1).to eq true
+    expect(actual_2).to eq false
+  end
+  
+  
 end

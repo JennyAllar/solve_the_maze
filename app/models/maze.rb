@@ -1,4 +1,5 @@
 class Maze < ActiveRecord::Base
+  
   def has_entrance?(string)
     string.include?("E")
   end
@@ -21,4 +22,9 @@ class Maze < ActiveRecord::Base
     end
     counter
   end
+  
+  def room_valid?(room)
+    room.length == 6
+  end
+    
 end
